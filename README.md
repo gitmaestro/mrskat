@@ -10,4 +10,4 @@ Right now it is **under major construction** so nevermind the mess.
 
 See 'todo.md' file for detailed todo list.
 
-P.S. I mix russian and english all togather.
+P.S. I mix russian and english all together.
