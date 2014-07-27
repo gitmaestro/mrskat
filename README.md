@@ -3,4 +3,4 @@ mrscat
 
 Repository for my personal website
 
-Under construction!
+It is **under major construction** so nevermind the mess.
