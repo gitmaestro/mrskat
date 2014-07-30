@@ -1,0 +1,19 @@
+---
+layout: page
+title: Категории
+permalink: /cetegories/
+---
+
+{% for category in site.categories %}
+<h3><a href="/{{ category | first | slugize }}/">{{ category | first }}</a></h3>
+    {% for posts in category %}
+        {% for post in posts %}
+            {% if post.url %}
+                     <div class="list">
+                         {{ post.date | date: "%b %-d, %Y" }}
+                     <a href="{{ post.url }}">{{ post.title }}</a>
+                    </div>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+{% endfor %}

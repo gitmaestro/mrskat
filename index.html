@@ -4,16 +4,13 @@ layout: default
 
 <div class="home">
 
-  <h1>Posts on /index.html</h1>
-
   <ul class="posts">
     {% for post in paginator.posts % %}
       <li>
         <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}
-            // {% for category in post.categories %}
-<!-- todo - ссылки на категории!!!-->
-           {{ category }} //
-         {% endfor %}</span>
+          {% for category in post.categories %}
+          <a href="/{{ category | slugize }}/">{{ category }}</a>
+          {% endfor %}</span>
         <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
           {{ post.excerpt }}
           <a href="{{ post.url | prepend: site.baseurl }}">Читать дальше</a>
@@ -22,16 +19,14 @@ layout: default
   </ul>
 
 
-<h3>Категории (для сйдбара ?)</h3>
+  <h3>Список категорий</h3>
     {% for category in site.categories %}
-    <li><a name="{{ category | first }}">{{ category | first }}</a>
-    </li>
+      <li><a href="{{ category | first | slugize }}">{{ category | first }}</a>
+      </li>
     {% endfor %}
-<!--todo - ссылки на страницы с категориями-->
 
-
-
-    {% if paginator.total_pages > 1 %}
+<div class="pagination">
+  {% if paginator.total_pages > 1 %}
     <div class="pagination">
         {% if paginator.previous_page %}
         <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
@@ -55,14 +50,10 @@ layout: default
         <span>Next &raquo;</span>
         {% endif %}
     </div>
-    {% endif %}
+  {% endif %}
+</div>
 
-
-            <p class="allpostsmeta"><a href="/archive/" title="Список всех статей" rel="nofollow">Список всех статей</a></p>
-
-
-
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+ <p class="allpostsmeta"><a href="/archive/" title="Список всех статей" rel="nofollow">Список всех статей</a></p>
 
 
 

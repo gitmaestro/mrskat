@@ -2,12 +2,13 @@
 
   <div class="wrap">
 
-    <h2 class="footer-heading">{{ site.title }}</h2>
+    <h2 class="footer-heading"></h2>
 
     <div class="footer-col-1 column">
       <ul>
-        <li>{{ site.title }}</li>
+        <li>Copyright © 2014 {{ site.title }}</li>
         <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+        <li><p> Время генерации сайта {{ site.time |  date: "%b %-d, %Y @ %H:%M %Z" }} </p></li>
       </ul>
     </div>
 
@@ -49,13 +50,14 @@
             <span class="username">{{ site.twitter_username }}</span>
           </a>
         </li>{% endif %}
+        <li> <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p></li>
       </ul>
     </div>
 
     <div class="footer-col-3 column">
       <p class="text">{{ site.description }}</p>
     </div>
-      <p> Время генерации сайта {{ site.time |  date: "%b %-d, %Y @ %H:%M %Z" }} </p>
+
   </div>
 
 </footer>
