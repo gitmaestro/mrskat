@@ -7,8 +7,7 @@ layout: default
     <h1>{{ page.title }}</h1>
     <p class="meta">{{ page.date | date: "%b %-d, %Y" }}  {% if page.meta %} • {{ page.meta }}{% endif %}
       // {% for category in page.categories %}
-<!-- todo - ссылки на категории!!!-->
-           {{ category }} //
+        <a href="/category/{{ category | slugize }}/">{{ category }}</a>
          {% endfor %}
     </p>
   </header>

@@ -9,7 +9,7 @@ layout: default
       <li>
         <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}
           {% for category in post.categories %}
-          <a href="/{{ category | slugize }}/">{{ category }}</a>
+          <a href="/category/{{ category | slugize }}/">{{ category }}</a>
           {% endfor %}</span>
         <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
           {{ post.excerpt }}
@@ -21,7 +21,7 @@ layout: default
 
   <h3>Список категорий</h3>
     {% for category in site.categories %}
-      <li><a href="{{ category | first | slugize }}">{{ category | first }}</a>
+      <li><a href="/category/{{ category | first | slugize }}">{{ category | first }}</a>
       </li>
     {% endfor %}
 

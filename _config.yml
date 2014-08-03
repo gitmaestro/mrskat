@@ -11,8 +11,13 @@ encoding: utf-8
 
 # Build settings
 markdown: kramdown
-permalink: pretty
+permalink: '/posts/:title/'
 
 
 paginate: 3
 paginate_path: "/page/:num"
+
+collections:
+  categories:
+    output: true
+    permalink: /category/:path/

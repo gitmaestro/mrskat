@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Архив
-permalink: /archive/
+permalink: /posts/
 ---
 
 {% assign posts = site.posts %}
@@ -15,7 +15,7 @@ permalink: /archive/
         <h3>{{ month }}</h3>
         <div class="list">{{ post.date | date: '%-d' }}  <a href="{{ post.id }}/" title="{{ post.title }}">{{ post.title }} </a>
             {% for category in post.categories %}
-               <a href="/{{ category | slugize }}/">{{ category }}</a>
+               <a href="/category/{{ category | slugize }}/">{{ category }}</a>
             {% endfor %}
         </div>
 
@@ -24,7 +24,7 @@ permalink: /archive/
 
         <div class="list">{{ post.date | date: '%-d' }}  <a href="{{ post.id }}/" title="{{ post.title }}">{{ post.title }}</a>
             {% for category in post.categories %}
-                <a href="/{{ category | slugize }}/">{{ category }}</a>
+                <a href="/category/{{ category | slugize }}/">{{ category }}</a>
             {% endfor %}</div>
     {% endif %}
 {% endfor %}
