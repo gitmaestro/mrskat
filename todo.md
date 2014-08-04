@@ -5,13 +5,13 @@ permalink: /todo/
 ---
 
 1. Основная структура сайта, ссылки и прочее
-    - [-] Folder/root stracture ?- move custom/private content from root to one folder. Configure `_config.yml` and update `.gitignore`
-    - [ ] Permalinks
+    - [x] Folder/root stracture ?- move custom/private content from root to one folder. Configure `_config.yml` and update `.gitignore`
+    - [x] Permalinks
     - [ ] 404 страница
     - [ ] sitemap (low priority)
     - [ ] robot.txt (before going online)
     - [ ] .htaccess
-    - [ ] Links on top navbar - remove categories
+    - [x] Links on top navbar - remove categories
 2. Организовать и привести в порядок, очистить код. Основной функционал.
     - [ ] Layouts (theme)
     - [ ] Pages (theme)

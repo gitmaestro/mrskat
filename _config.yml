@@ -5,18 +5,17 @@ baseurl: ""
 url: "http://mrscat.ru"
 twitter_username: me0wth
 github_username:  me0wth66
-
-
 encoding: utf-8
 
 # Build settings
 markdown: kramdown
 permalink: '/posts/:title/'
 
-
+# Pagination
 paginate: 3
 paginate_path: "/page/:num"
 
+# Category lists pages
 collections:
   categories:
     output: true
