@@ -7,7 +7,23 @@ layout: default
   <ul class="posts">
     {% for post in paginator.posts % %}
       <li>
-        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}
+        <span class="post-date">
+            {% assign m = post.date | date: "%-m" %}
+            {% case m %}
+                {% when '1' %}Янв.
+                {% when '2' %}Февр.
+                {% when '3' %}Март
+                {% when '4' %}Апр.
+                {% when '5' %}Май
+                {% when '6' %}Июнь
+                {% when '7' %}Июль
+                {% when '8' %}Авг.
+                {% when '9' %}Сент.
+                {% when '10' %}Окт.
+                {% when '11' %}Нояб.
+                {% when '12' %}Дек.
+            {% endcase %}
+            {{ post.date | date: " %-d, %Y" }}
           {% for category in post.categories %}
           <a href="/category/{{ category | slugize }}/">{{ category }}</a>
           {% endfor %}</span>
