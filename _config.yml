@@ -20,3 +20,10 @@ collections:
   categories:
     output: true
     permalink: /category/:path/
+
+# Static main pages
+include: ['_pages']
+relative_permalinks: false
+
+# Pages plagin
+pages: ./_static_pages

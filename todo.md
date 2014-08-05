@@ -27,7 +27,7 @@ permalink: /todo/
 5. [ ] **Update readme, license and disclaimer when done**.
 
 ## Other ##
-- [ ] Перевод дат на русский язык!!!
+- [x] Перевод дат на русский язык!!!
 - [ ] атрибуты nofollow для ссылок
 - [ ] установить emoji
 - [ ] установить скрипт (fancy box) для просмотра фотографий
