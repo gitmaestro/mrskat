@@ -8,7 +8,22 @@ permalink: /posts/
 {% for post in posts %}
 
     {% capture month %}
-        {{ post.date | date:'%B %Y' }}
+        {% assign m = post.date | date: "%-m" %}
+            {% case m %}
+                {% when '1' %}Январь
+                {% when '2' %}Февраль
+                {% when '3' %}Март
+                {% when '4' %}Апрель
+                {% when '5' %}Май
+                {% when '6' %}Июнь
+                {% when '7' %}Июль
+                {% when '8' %}Август
+                {% when '9' %}Сентябрь
+                {% when '10' %}Октябрь
+                {% when '11' %}Ноябрь
+                {% when '12' %}Декабрь
+            {% endcase %}
+           {{ post.date | date: "%Y" }}
     {% endcapture %}
 
     {% if last_month != month %}
