@@ -7,7 +7,7 @@ permalink: /todo/
 1. Основная структура сайта, ссылки и прочее
     - [x] Folder/root stracture ?- move custom/private content from root to one folder. Configure `_config.yml` and update `.gitignore`
     - [x] Permalinks
-    - [ ] 404 страница
+    - [x] 404 страница
     - [ ] sitemap (low priority)
     - [ ] robot.txt (before going online)
     - [ ] .htaccess
