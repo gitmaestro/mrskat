@@ -34,3 +34,14 @@ layout: default
   </article>
 
 </div>
+    <p><a href="#top">Наверх</a></p>
+<div>
+    <p>Другие записи по теме:</p>
+    {% for post in site.related_posts %}
+    <ul>
+        <li>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </li>
+    </ul>
+    {% endfor %}
+</div>

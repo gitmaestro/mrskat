@@ -25,7 +25,7 @@ layout: default
             {% endcase %}
             {{ post.date | date: " %-d, %Y" }}
           {% for category in post.categories %}
-          <a href="/category/{{ category | slugize }}/">{{ category }}</a>
+          <a href="{{ site.baseurl }}/category/{{ category | slugize }}/">{{ category }}</a>
           {% endfor %}</span>
         <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
           {{ post.excerpt }}
@@ -33,7 +33,6 @@ layout: default
       </li>
     {% endfor %}
   </ul>
-
 
   <h3>Список категорий</h3>
     {% for category in site.categories %}
@@ -69,8 +68,6 @@ layout: default
   {% endif %}
 </div>
 
- <p class="allpostsmeta"><a href="/archive/" title="Список всех статей" rel="nofollow">Список всех статей</a></p>
-
-
-
+ <p class="allpostsmeta"><a href="{{ site.baseurl }}/posts/" title="Список всех статей" rel="nofollow">Список всех статей</a></p>
+ <p><a href="#top">Наверх</a></p>
 </div>
