@@ -36,7 +36,7 @@ layout: default
 
   <h3>Список категорий</h3>
     {% for category in site.categories %}
-      <li><a href="/category/{{ category | first | slugize }}">{{ category | first }}</a>
+      <li><a href="{{ site.baseurl }}/category/{{ category | first | slugize }}">{{ category | first }}</a>
       </li>
     {% endfor %}
 
@@ -44,26 +44,22 @@ layout: default
   {% if paginator.total_pages > 1 %}
     <div class="pagination">
         {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
-        {% else %}
-        <span>&laquo; Prev</span>
+        <a href="{{ site.baseurl }}/{% if paginator.previous_page != 1 %}page/{{ paginator.previous_page }}{% endif %}">Раньше</a>
         {% endif %}
 
         {% for page in (1..paginator.total_pages) %}
         {% if page == paginator.page %}
         <em>{{ page }}</em>
         {% elsif page == 1 %}
-        <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+        <a href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
         {% else %}
         <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
         {% endif %}
         {% endfor %}
-
         {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
-        {% else %}
-        <span>Next &raquo;</span>
+        <a href="{{ site.baseurl }}/page/{{ paginator.next_page }}">Позже</a>
         {% endif %}
+
     </div>
   {% endif %}
 </div>

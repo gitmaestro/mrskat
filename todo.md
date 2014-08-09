@@ -11,8 +11,8 @@ permalink: /todo/
 
 2. Организовать и привести в порядок, очистить код. Основной функционал.
     - [ ] _Layouts (pages)
-        - [ ] related posts в просмотре записи
-        - [ ] pagination ?- нужны ли вообще страницы с упорядоченными записями, ограничиться простым архивом
+        - [x] related posts в просмотре записи
+        - [x] pagination ?- нужны ли вообще страницы с упорядоченными записями, ограничиться простым архивом
     - [ ] _Includes (theme)
         - [x] Links on top navbar - remove categories
     - [ ] Navigation block
