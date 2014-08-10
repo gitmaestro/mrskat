@@ -1,0 +1,8 @@
+---
+---
+User-agent: *
+Disallow: /404.html
+Disallow: /category/*
+Disallow: /page/
+Allow: /
+Sitemap: {{ site.url }}/sitemap.xml
