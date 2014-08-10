@@ -17,7 +17,7 @@ paginate_path: "/page/:num"
 
 # Category lists pages
 collections:
-  categories:
+  category-pages:
     output: true
     permalink: /category/:path/
 
