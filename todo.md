@@ -34,7 +34,7 @@ permalink: /todo/
 
 ## Завершающие ##
 - [ ] favicon
-- [ ] Статистика (google analitics)
+- [x] Статистика (google analitics)
 - [x] sitemap
 - [x] robot.txt
 - [ ] .htaccess
