@@ -58,14 +58,7 @@ layout: default
   {% endif %}
 </div>
 
-    <div class="sidebar">
-        <h3>Категории</h3>
-        {% for category in site.categories %}
-        <li><a href="{{ site.baseurl }}/category/{{ category | first | slugize }}">{{ category | first }}</a>
-        </li>
-        {% endfor %}
-        <a href="{{ site.baseurl }}/posts/" title="Список всех статей" rel="nofollow">Список всех статей</a>
-    </div>
+
 
 
 </div>

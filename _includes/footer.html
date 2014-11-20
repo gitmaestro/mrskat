@@ -1,18 +1,23 @@
 <footer class="site-footer">
 
   <div class="wrap">
+	<div>
+    <p class="footer-heading"><a href="#top">Наверх</a></p>
+	</div>
 
-    <h2 class="footer-heading"></h2>
-      <p><a href="#top">Наверх</a></p>
     <div class="footer-col-1 column">
-      <ul>
-        <li>Copyright © 2014 {{ site.title }}</li>
-        <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-        <li><p> Время генерации {{ site.time |  date: "%b %-d, %Y @ %H:%M %Z" }} </p></li>
-      </ul>
+		<div class="sidebar catlist ">
+			<p>Категории</p>
+			{% for category in site.categories %}
+			<li><a href="{{ site.baseurl }}/category/{{ category | first | slugize }}">{{ category | first }}</a>
+			</li>
+			{% endfor %}
+			<a href="{{ site.baseurl }}/posts/" title="Список всех статей" rel="nofollow">Список всех статей</a>
+		</div>
     </div>
 
     <div class="footer-col-2 column">
+		<p>Медиа:</p>
       <ul>
         {% if site.github_username %}<li>
           <a href="https://github.com/{{ site.github_username }}">
@@ -62,12 +67,17 @@
 			  <span class="username">{{ site.instagram_username }}</span>
 		  </a>
 	  </li>{% endif %}
-        <li> <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p></li>
+        <li> <p class="rss-subscribe">Подписка <a href="{{ "/feed.xml" | prepend: site.baseurl }}">по RSS</a></p></li>
       </ul>
     </div>
 
     <div class="footer-col-3 column">
       <!--<p class="text">{{ site.description }}</p>-->
+		<ul>
+			<li>Copyright © 2014 {{ site.title }}</li>
+			<li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+			<li><p> Время генерации {{ site.time |  date: "%b %-d, %Y @ %H:%M %Z" }} </p></li>
+		</ul>
     </div>
 
   </div>
