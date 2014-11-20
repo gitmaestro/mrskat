@@ -36,7 +36,7 @@ layout: default
 
 <div class="pagination">
   {% if paginator.total_pages > 1 %}
-    <div class="pagination">
+
         {% if paginator.previous_page %}
         <a href="{{ site.baseurl }}/{% if paginator.previous_page != 1 %}page/{{ paginator.previous_page }}{% endif %}">Раньше</a>
         {% endif %}
@@ -54,7 +54,7 @@ layout: default
         <a href="{{ site.baseurl }}/page/{{ paginator.next_page }}">Позже</a>
         {% endif %}
 
-    </div>
+
   {% endif %}
 </div>
 

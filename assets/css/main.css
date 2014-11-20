@@ -9,18 +9,27 @@
 html, body { height: 100%; }
 
 body {
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  font-weight: 300;
+  font-family: "PT Serif",Georgia,serif;
+  font-size: 17px;
+  line-height: 26px;
+  font-weight: 400;
   background-color: #fdfdfd;
+
+
 }
 
-h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: 400; }
+h1, h2, h3, h4, h5, h6 {
+font-family: "Hoefler Text",Baskerville,"PTSerif",Times,"Times New Roman",serif;
+font-size: 100%;
+font-weight: 400;
+moz-font-feature-settings: "liga=1, kern=1";
+-ms-font-feature-settings: "liga" 1,"kern" 1;}
 
 a         { color: #2a7ae2; text-decoration: none; }
 a:hover   { color: #000; text-decoration: underline; }
 a:visited { color: #205caa; }
+
+
 
 /* Utility */
 
@@ -41,27 +50,38 @@ a:visited { color: #205caa; }
 /* Site header */
 
 .site-header {
+  max-width: 800px;
+  padding: 0 30px;
+  margin: 0 auto;
+  zoom: 1;
   border-top: 5px solid #333;
   border-bottom: 1px solid #e8e8e8;
   min-height: 56px;
-  background-color: white;
 }
 
 .site-title,
 .site-title:hover,
 .site-title:visited {
+moz-font-feature-settings: "liga=1, kern=1";
+-ms-font-feature-settings: "liga" 1,"kern" 1;
   display: block;
   color: #333;
-  font-size: 26px;
+  font-size: 64px;
   letter-spacing: -1px;
-  float: left;
-  line-height: 56px;
+  text-align: center;
+  line-height: 72px;
   position: relative;
   z-index: 1;
 }
 
+.site-title:hover {
+text-decoration: none;
+}
+
 .site-nav {
-  float: right;
+max-width: 900px;
+margin: 0 auto;
+text-align: center;
   line-height: 56px;
 }
 
@@ -73,18 +93,26 @@ a:visited { color: #205caa; }
   letter-spacing: -.5px;
 }
 
+/* Pagination */
+
+.pagination{
+  text-align: center;
+  margin: 15px 0 0 15px;
+}
+
 /* Site footer */
 
 .site-footer {
   border-top: 1px solid #e8e8e8;
   padding: 30px 0;
+  line-height: 1.5;
 }
 
 .footer-heading {
-  font-size: 18px;
-  font-weight: 300;
-  letter-spacing: -.5px;
-  margin-bottom: 15px;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 20px;
+	text-align: center;
 }
 
 .site-footer .column { float: left; margin-bottom: 15px; }
@@ -117,9 +145,14 @@ a:visited { color: #205caa; }
 
 .site-footer li,
 .site-footer p {
-  font-size: 15px;
+  font-size: 13px;
   letter-spacing: -.3px;
   color: #828282;
+}
+.site-footer b {
+  color: #828282;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .github-icon-svg,
@@ -169,10 +202,11 @@ a:visited { color: #205caa; }
 .post-header { margin: 10px 0 30px; }
 
 .post-header h1 {
-  font-size: 42px;
-  letter-spacing: -1.75px;
+
+  font-size: 50px;
+  letter-spacing:0.5px;
   line-height: 1;
-  font-weight: 300;
+  font-style: italic;
 }
 
 .post-header .meta {
@@ -246,6 +280,18 @@ a:visited { color: #205caa; }
   border: 0;
   padding-right: 0;
   padding-left: 0;
+}
+
+/* Posts */
+.c-date {
+display: inline-block;
+border-radius: 50%;
+width: 27px;
+height: 27px;
+background-color: lightgrey;
+text-align: center;
+vertical-align: baseline;
+margin-right: 3px;
 }
 
 /* terminal */

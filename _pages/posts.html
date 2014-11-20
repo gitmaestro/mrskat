@@ -28,18 +28,18 @@ permalink: /posts/
 
     {% if last_month != month %}
         <h3>{{ month }}</h3>
-        <div class="list">{{ post.date | date: '%-d' }}  <a href="{{ post.id }}/" title="{{ post.title }}">{{ post.title }} </a>
+        <div class="list"> <span class="c-date">{{ post.date | date: '%-d' }}</span>   <a href="{{ post.id }}/" title="{{ post.title }}">{{ post.title }} </a>
             {% for category in post.categories %}
-               <a href="/category/{{ category | slugize }}/">{{ category }}</a>
+			// <a href="/category/{{ category | slugize }}/">{{ category }}</a>
             {% endfor %}
         </div>
 
         {% assign last_month = month %}
         {% else %}
 
-        <div class="list">{{ post.date | date: '%-d' }}  <a href="{{ post.id }}/" title="{{ post.title }}">{{ post.title }}</a>
+        <div class="list"> <span class="c-date">{{ post.date | date: '%-d' }}</span>   <a href="{{ post.id }}/" title="{{ post.title }}">{{ post.title }}</a>
             {% for category in post.categories %}
-                <a href="/category/{{ category | slugize }}/">{{ category }}</a>
+               // <a href="/category/{{ category | slugize }}/">{{ category }}</a>
             {% endfor %}</div>
     {% endif %}
 {% endfor %}

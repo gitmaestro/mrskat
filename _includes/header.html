@@ -1,11 +1,9 @@
 <header class="site-header">
+	<a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+	<a name="top"></a>
+</header>
+<nav class="site-nav">
 
-  <div class="wrap">
-
-    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
-
-    <nav class="site-nav">
-      <a name="top"></a>
       <a href="#" class="menu-icon">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
            viewBox="0 0 18 15" enable-background="new 0 0 18 15" xml:space="preserve">
@@ -17,15 +15,15 @@
             c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
         </svg>
       </a>
-      <div class="trigger">
-          <a class="page-link" href="{{ site.baseurl }}/posts">Архив</a>
-          <a class="page-link" href="{{ site.baseurl }}/category">Категории</a>
-          <a class="page-link" href="{{ site.baseurl }}/about">Обо мне</a>
-      </div>
-    </nav>
+      <div class="trigger"><!--todo - rewrite navigation links-->
+		<a class="page-link" href="{{ site.baseurl }}/posts">Архив</a>
+		<a class="page-link" href="{{ site.baseurl }}/category">Категории</a>
+		<a class="page-link" href="{{ site.baseurl }}/about">Обо мне</a>
+	</div>
+</nav>
 
-  </div>
 
-</header>
+
+
 
 

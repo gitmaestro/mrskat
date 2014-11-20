@@ -2,11 +2,26 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-    <meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{ site.description }}">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
-    <!-- Custom CSS -->
+    <!-- CSS -->
+	<link rel="stylesheet" href="{{ "/assetscss/normalize.css" | prepend: site.baseurl }}">
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
-
+	<script src="{{ "/assets/js/vendor/modernizr-2.6.2.min.js" | prepend: site.baseurl }}"></script>
+	<!-- Google Fonts embed code -->
+	<script type="text/javascript">
+	(function() {
+		var link_element = document.createElement("link"),
+		s = document.getElementsByTagName("script")[0];
+		if (window.location.protocol !== "http:" && window.location.protocol !== "https:") {
+			link_element.href = "http:";
+		}
+		link_element.href += "//fonts.googleapis.com/css?family=PT+Serif:400italic,400,700italic,700";
+		link_element.rel = "stylesheet";
+		link_element.type = "text/css";
+		s.parentNode.insertBefore(link_element, s);
+	})();
+	</script>
 </head>
