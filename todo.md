@@ -26,6 +26,8 @@ permalink: /todo/
     - [ ] vector header
 
 4. RWD
+	[x] images (scalable through CSS so far)
+
 
 5. [ ] **Update readme, license and disclaimer when done**.
 
