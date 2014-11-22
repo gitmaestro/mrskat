@@ -1,13 +1,16 @@
 ---
 layout: default
 ---
-
-<div class="home">
-
-  <ul class="posts">
+  <div class="posts">
+<ul class="posts">
     {% for post in paginator.posts % %}
-      <li>
-        <span class="post-date">
+
+      <li class="post-content">
+		  <header class="post-header">
+			  <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+		  </header>
+
+		  <span class="post-date">
             {% assign m = post.date | date: "%-m" %}
             {% case m %}
                 {% when '1' %}Янв.
@@ -25,15 +28,14 @@ layout: default
             {% endcase %}
             {{ post.date | date: " %-d, %Y" }}
           {% for category in post.categories %}
-          <a href="{{ site.baseurl }}/category/{{ category | slugize }}/">{{ category }}</a>
+          <a class="meta" href="{{ site.baseurl }}/category/{{ category | slugize }}/"> / {{ category }}</a>
           {% endfor %}</span>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-          {{ post.excerpt }}
-          <a href="{{ post.url | prepend: site.baseurl }}">Читать дальше</a>
+		  {{ post.excerpt }}
+          <a class="exerp" href="{{ post.url | prepend: site.baseurl }}">Читать дальше</a>
       </li>
     {% endfor %}
   </ul>
-
+</div>
 <div class="pagination">
   {% if paginator.total_pages > 1 %}
 
@@ -56,9 +58,4 @@ layout: default
 
 
   {% endif %}
-</div>
-
-
-
-
 </div>
