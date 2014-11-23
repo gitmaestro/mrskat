@@ -1,7 +1,7 @@
 mrscat
 ======
 
-Repository for my personal website
+Repository for my personal website/blog mrskat.com
 
 I'm getting into jekyll and trying to make my own template from scratch (default theme).
 When everything is done and I'm satisfied with it, it will go online.
