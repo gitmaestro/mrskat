@@ -143,6 +143,7 @@ footer a:hover {
   border-top: 1px solid #e8e8e8;
   padding: 30px 0;
   line-height: 1.5;
+
 }
 
 .footer-heading {
@@ -155,6 +156,7 @@ footer a:hover {
 .site-footer .column {
   float: left;
   margin-bottom: 15px;
+  text-align: left;
 }
 
 .footer-col-1 {
@@ -215,6 +217,7 @@ footer a:hover {
 .page-content {
   padding: 30px 0;
   background-color: #fff;
+  text-align: left;
 }
 
 /* Home styles */
