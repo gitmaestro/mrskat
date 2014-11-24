@@ -238,7 +238,7 @@ li.posts {
 }
 
 .post-content > * {
-  margin: 10px 0;
+  margin: 15px 0;
 }
 
 .post-content h1,
@@ -274,12 +274,11 @@ li.posts {
 
 .post-content blockquote {
   border-left: 4px solid #e8e8e8;
-  padding-left: 20px;
-  font-size: 18px;
+  padding-left: 15px;
   opacity: .6;
   letter-spacing: -1px;
   font-style: italic;
-  margin: 30px 0;
+  margin: 30px 0 30px 60px;
 }
 
 .post-content ul,
@@ -350,6 +349,11 @@ li.posts {
   text-align: center;
   vertical-align: baseline;
   margin-right: 3px;
+}
+
+h3.month {
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 /* terminal */

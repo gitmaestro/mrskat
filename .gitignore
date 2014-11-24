@@ -1,6 +1,9 @@
 _site/
 _posts/
+_drafts/
 _category-pages/
 about.md
 desktop.ini
 .idea/
+images/
+gallery/

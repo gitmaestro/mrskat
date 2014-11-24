@@ -24,7 +24,7 @@ layout: default
         {{page.date | date: " %-d, %Y" }}
         {% if page.meta %} • {{ page.meta }}{% endif %}
         {% for category in page.categories %}
-        // <a class="post-date" href="{{ site.baseurl }}/category/{{ category | slugize }}/">{{ category }}</a>
+        // <a href="{{ site.baseurl }}/category/{{ category | slugize }}/">{{ category }}</a>
         {% endfor %}
     </p>
   </header>

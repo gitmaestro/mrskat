@@ -27,7 +27,8 @@ permalink: /posts/
     {% endcapture %}
 
     {% if last_month != month %}
-        <h3>{{ month }}</h3>
+
+		<h3 class="month">{{ month }}</h3>
         <div class="list"> <span class="c-date">{{ post.date | date: '%-d' }}</span>   <a href="{{ post.id }}/" title="{{ post.title }}">{{ post.title }} </a>
             {% for category in post.categories %}
 			// <a href="/category/{{ category | slugize }}/">{{ category }}</a>

@@ -1,6 +1,18 @@
 ---
 layout: default
 ---
+<div class="posts">
+	<div class="post-content">
+		<header class="post-header">
+			<h1>Почти готово...</h1>
+		</header>
+
+		<p>Миллионы гномиков во всей Вселенной трудятся в поте лица, чтобы наладить эту страницу!</p>
+		<p>Заходите попозже.</p>
+	</div>
+</div>
+
+
   <div class="posts">
 <ul class="posts">
     {% for post in paginator.posts % %}
@@ -28,7 +40,7 @@ layout: default
             {% endcase %}
             {{ post.date | date: " %-d, %Y" }}
           {% for category in post.categories %}
-          <a class="meta" href="{{ site.baseurl }}/category/{{ category | slugize }}/"> / {{ category }}</a>
+          <a href="{{ site.baseurl }}/category/{{ category | slugize }}/"> / {{ category }}</a>
           {% endfor %}</span>
 		  {{ post.excerpt }}
           <a class="exerp" href="{{ post.url | prepend: site.baseurl }}">Читать дальше</a>
