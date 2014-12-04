@@ -52,6 +52,9 @@ img {
   max-width: 800px;
 }
 
+.thumbnail {
+  margin-right: 7px;
+}
 /* Utility */
 
 .wrap:before,
@@ -132,7 +135,7 @@ img {
 /* Site footer */
 
 footer a, a:visited {
-  color: #828282;
+/*  color: #828282;*/
 }
 
 footer a:hover {
@@ -160,11 +163,11 @@ footer a:hover {
 }
 
 .footer-col-1 {
-  width: 270px; /*fallback*/
-  width: -webkit-calc(35% - 10px);
-  width: -moz-calc(35% - 10px);
-  width: -o-calc(35% - 10px);
-  width: calc(35% - 10px);
+  width: 220px; /*fallback*/
+  width: -webkit-calc(25% - 10px);
+  width: -moz-calc(25% - 10px);
+  width: -o-calc(25% - 10px);
+  width: calc(25% - 10px);
   margin-right: 10px
 }
 
@@ -178,7 +181,7 @@ footer a:hover {
 }
 
 .footer-col-3 {
-  width: 335px; /*fallback*/
+  width: 325px; /*fallback*/
   width: -webkit-calc(41.875%);
   width: -moz-calc(41.875%);
   width: -o-calc(41.875%);
@@ -354,6 +357,13 @@ li.posts {
 h3.month {
   margin-top: 30px;
   margin-bottom: 20px;
+}
+
+/* Immigration */
+.box {
+  border: dotted 1px darkmagenta;
+  width: 100%;
+  padding: 0px 5px 0px 5px;
 }
 
 /* terminal */

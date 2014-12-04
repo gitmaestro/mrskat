@@ -9,8 +9,10 @@
     <!-- CSS -->
 	<link rel="stylesheet" href="{{ "/assets/css/normalize.css" | prepend: site.baseurl }}">
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
+	<link rel="stylesheet" href="{{ "/assets/css//jquery.fancybox-1.3.4.css" | prepend: site.baseurl }}">
+	<link rel="stylesheet" href="{{ "/assets/css/goodreads.css" | prepend: site.baseurl }}">
 	<script src="{{ "/assets/js/vendor/modernizr-2.6.2.min.js" | prepend: site.baseurl }}"></script>
-	<!-- Google Fonts embed code -->
+	<!-- Google Fonts-->
 	<script type="text/javascript">
 	(function() {
 		var link_element = document.createElement("link"),
@@ -23,5 +25,19 @@
 		link_element.type = "text/css";
 		s.parentNode.insertBefore(link_element, s);
 	})();
+	</script>
+	<!--Fancybox script-->
+	<script type='text/javascript' src='./assets/js/vendor/jquery.min.js'></script>
+	<script type='text/javascript' src='./assets/js/vendor/jquery.fancybox-1.3.4.pack.js'></script>
+	<script type="text/javascript">
+		$(function() {
+			$("a.group").fancybox({
+				'nextEffect'	:	'fade',
+				'prevEffect'	:	'fade',
+				'overlayOpacity' :  0.8,
+				'overlayColor' : '#000000',
+				'arrows' : false
+			});
+		});
 	</script>
 </head>
