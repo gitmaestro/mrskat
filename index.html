@@ -4,9 +4,9 @@ layout: default
 <div class="posts">
 	<div class="post-content">
   <div class="posts">
-<ul class="posts">
+<div class="posts">
     {% for post in paginator.posts % %}
-      <li class="post-content">
+      <div class="post-content">
 		  <header class="post-header">
 			  <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
 		  </header>
@@ -32,9 +32,9 @@ layout: default
           {% endfor %}</span>
 		  {{ post.excerpt }}
           <a class="exerp" href="{{ post.url | prepend: site.baseurl }}">Читать дальше</a>
-      </li>
+      </div>
     {% endfor %}
-  </ul>
+  </div>
 </div>
 <div class="pagination">
   {% if paginator.total_pages > 1 %}

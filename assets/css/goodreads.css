@@ -2,7 +2,7 @@
 .gr_custom_container_1417576174 {
   /* customize your Goodreads widget container here*/
   background-color: #FFFFFF;
-  color: #000000;
+  color: rgba(46, 48, 58, 0.96);
   width: 340px
 }
 .gr_custom_header_1417576174 {
@@ -48,11 +48,7 @@
 }
 
 .gr_custom_title_1417576174 a, a:visited {
-  color: black;
-}
-
-.gr_custom_author_1417576174 a, a:visited {
-  color: gray;
+  color: rgba(46, 48, 58, 0.96);
 }
 
 h2.gr_custom_header_1417576174 {
