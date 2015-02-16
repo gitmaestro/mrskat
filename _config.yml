@@ -1,6 +1,7 @@
 # Site settings
 title: Mrs.Kat
-description: "Персональный сайт/блог/дневник/исповедальня, называйте его как хотите. Для меня это место, где я делюсь своими мыслями, впечатлениями и идеями."
+description: "Личнй блог, где я делюсь своими мыслями, впечатлениями и идеями."
+keywords: "блог, жизнь, америка, рептилии, игуана"
 url: "http://mrskat.com"
 twitter_username: me0wth
 github_username:  me0wth66
@@ -12,7 +13,7 @@ markdown: kramdown
 permalink: '/posts/:title/'
 
 # Pagination
-paginate: 3
+paginate: 5
 paginate_path: "/page/:num"
 
 # Category lists pages
