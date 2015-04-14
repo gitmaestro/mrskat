@@ -1,0 +1,16 @@
+---
+layout: page
+title: Категория - США
+permalink: /category/usa/
+---
+Добавление каждой категории и списка к ней осуществляется вручную
+<!--Название каждой категории и список ниже-->
+
+<h2>США</h2>
+{% for post in site.categories.usa %}
+        <ul>
+            <li>
+                {{ post.date | date: "%b %-d, %Y" }}  <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+            </li>
+        </ul>
+{% endfor %}
