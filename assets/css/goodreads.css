@@ -87,3 +87,15 @@ h2.gr_custom_header_1417576174 {
 .book-widget {
   clear: both;
 }
+
+#instagram {
+  margin:0;
+  padding:0;
+  overflow:hidden;
+}
+
+#instagram li {
+  list-style:none;
+  float:left;
+  margin:0 5px 5px 0;
+}

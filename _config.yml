@@ -1,12 +1,13 @@
 # Site settings
 title: Mrs.Kat
-description: "Личнй блог, где я делюсь своими мыслями, впечатлениями и идеями."
+description: "Личный блог, где я делюсь своими мыслями, впечатлениями и идеями."
 keywords: "блог, жизнь, америка, рептилии, игуана"
 url: "http://mrskat.com"
 twitter_username: me0wth
 github_username:  me0wth66
 instagram_username: me0wth66
 encoding: utf-8
+baseurl: '' # does not include hostname
 
 # Build settings
 markdown: kramdown

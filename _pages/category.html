@@ -5,7 +5,7 @@ permalink: /category/
 ---
 
 {% for category in site.categories %}
-<h3><a href="/_category-pages/{{ category | first | slugize }}/">{{ category | first }}</a></h3>
+<h3><a href="/category/{{ category | first | slugize }}/">{{ category | first }}</a></h3>
     {% for posts in category %}
         {% for post in posts %}
             {% if post.url %}

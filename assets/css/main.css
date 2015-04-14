@@ -243,6 +243,7 @@ li.posts {
 .post-content h6 {
   line-height: 1;
   font-weight: 300;
+  margin: 0.8em 0;
 
 }
 
@@ -253,7 +254,7 @@ li.posts {
 
 .post-content h2 {
   font-size: 32px;
-  letter-spacing: -1.25px;
+  letter-spacing: -1px;
 }
 
 .post-content h3 {
@@ -273,6 +274,20 @@ li.posts {
   letter-spacing: -1px;
   font-style: italic;
   margin: 30px 0 30px 60px;
+}
+
+.post-content blockquote.info {
+  font-family: monospace,serif;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 300;
+  letter-spacing: 0px;
+  color: rgba(46, 48, 58, 0.96);
+  border-left: 12px solid #7D8A2E;
+  background-color: #CEFFB9;
+  padding: 5px 5px 5px 20px;
+  margin-left: 0px;
 }
 
 .post-content ul,
@@ -319,8 +334,8 @@ li.posts {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  font-size: 15px;
-  overflow: scroll;
+  font-size: 16px;
+  overflow: auto;
 }
 
 .post code {
@@ -348,6 +363,13 @@ li.posts {
 h3.month {
   margin-top: 30px;
   margin-bottom: 20px;
+}
+
+.caption {
+  font-style: italic;
+  font-size: 15px;
+  color: darkslategray;
+  line-height: 20px;
 }
 
 /* Immigration */
