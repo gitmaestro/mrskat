@@ -1,0 +1,13 @@
+---
+layout: page
+title: Категория - Рептилии
+permalink: /category/reptiles/
+---
+Раздел посвящен моим домашним питомцам: игуане и агаме. Содержание, уход, фотографии - все, что касается рептилий.
+{% for post in site.categories.reptiles %}
+<ul>
+	<li>
+		{{ post.date | date: "%b %-d, %Y" }}  <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+	</li>
+</ul>
+{% endfor %}

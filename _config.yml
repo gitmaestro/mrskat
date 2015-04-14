@@ -13,13 +13,16 @@ baseurl: '' # does not include hostname
 markdown: kramdown
 permalink: '/posts/:title/'
 
+#related posts
+lsi:         false
+
 # Pagination
 paginate: 5
 paginate_path: "/page/:num"
 
 # Category lists pages
 collections:
-  category-pages:
+  category:
     output: true
     permalink: /category/:path/
 
@@ -28,7 +31,7 @@ include: ['_pages']
 relative_permalinks: false
 
 # Pages plagin
-pages: ./_static_pages
+#pages: ./_static_pages
 
 # Excerpt
 excerpt_separator: "<!-- cut -->"
