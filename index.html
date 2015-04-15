@@ -2,9 +2,6 @@
 layout: default
 ---
 <div class="posts">
-	<div class="post-content">
-  <div class="posts">
-<div class="posts">
     {% for post in paginator.posts %}
       <div class="post-content">
 		  <header class="post-header">
@@ -34,7 +31,6 @@ layout: default
           <a class="exerp" href="{{ post.url | prepend: site.baseurl }}">Читать дальше</a>
       </div>
     {% endfor %}
-  </div>
 </div>
 <div class="pagination">
   {% if paginator.total_pages > 1 %}
