@@ -5,7 +5,7 @@ permalink: /category/
 ---
 
 {% for category in site.categories %}
-<h3><a href="/category/{{ category | first | slugize }}/">{{ category | first }}</a></h3>
+<h3><a href="/category/{{ category | first | slugize }}/">{{ category | first | replace:'usa','США' | replace:'animals','Животный мир' | replace:'private','Личные заметки' | replace:'reptiles','Рептилии' | replace:'computers','Компьютерное' }}</a></h3>
     {% for posts in category %}
         {% for post in posts %}
             {% if post.url %}

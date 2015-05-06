@@ -9,8 +9,8 @@
 		<div class="sidebar catlist ">
 			<b>Категории:</b>
 			<ul>{% for category in site.categories %}
-			<li><a href="{{ site.baseurl }}/category/{{ category | first | slugize }}">{{ category | first }}</a>
-			</li>
+			<li><a href="{{ site.baseurl }}/category/{{ category | first | slugize  }}">{{ category | first | replace:'usa','США' | replace:'animals','Животный мир' | replace:'private','Личные заметки' | replace:'reptiles','Рептилии' | replace:'computers','Компьютерное' | }}</a> <sup>{{ category | last | size }}</sup>
+            </li>
 			{% endfor %}
 			</ul>
 			<p><a href="{{ site.baseurl }}/posts/" title="Список всех статей" rel="nofollow">Список всех статей</a></p>

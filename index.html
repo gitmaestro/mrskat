@@ -1,6 +1,15 @@
 ---
 layout: default
 ---
+        <!--
+{% if page.url == "/index.html" %}
+    <div class="news-block">
+        <h1>Последние новости</h1>
+        {% for album in site.news limit: 5  %}
+         <b>{{album.date}}</b> - {{album.content}}
+        {% endfor %}
+    </div>
+{% endif %}-->
 <div class="posts">
     {% for post in paginator.posts %}
       <div class="post-content">
@@ -25,7 +34,7 @@ layout: default
             {% endcase %}
             {{ post.date | date: " %-d, %Y" }}
           {% for category in post.categories %}
-          <a href="{{ site.baseurl }}/category/{{ category | slugize }}/"> / {{ category }}</a>
+          <a href="{{ site.baseurl }}/category/{{ category | slugize }}/"> / {{ category | replace:'usa','США' | replace:'animals','Животный мир' | replace:'private','Личные заметки' | replace:'reptiles','Рептилии' | replace:'computers','Компьютерное'}}</a>
           {% endfor %}</span>
 		  {{ post.excerpt }}
           <a class="exerp" href="{{ post.url | prepend: site.baseurl }}">Читать дальше</a>
