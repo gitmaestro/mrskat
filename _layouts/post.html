@@ -25,6 +25,7 @@ layout: default
         {% for category in page.categories %}
         // <a href="{{ site.baseurl }}/category/{{ category | slugize }}/">{{ category | replace:'usa','США' | replace:'animals','Животный мир' | replace:'private','Личные заметки' | replace:'reptiles','Рептилии' | replace:'computers','Компьютерное'}}</a>
         {% endfor %}
+        // <a href="{{ post.url }}">Ссылка на пост</a>
     </p>
   </header>
   <article class="post-content">
