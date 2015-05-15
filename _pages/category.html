@@ -3,7 +3,6 @@ layout: page
 title: Категории
 permalink: /category/
 ---
-
 {% for category in site.categories %}
 <h3><a href="/category/{{ category | first | slugize }}/">{{ category | first | replace:'usa','США' | replace:'animals','Животный мир' | replace:'private','Личные заметки' | replace:'reptiles','Рептилии' | replace:'computers','Компьютерное' }}</a></h3>
     {% for posts in category %}
