@@ -8,3 +8,6 @@ images/
 pictures/
 video/
 *.log
+.jekyll-metadata
+google2e31df4f693bd96f.html
+_includes/google.html
