@@ -1,23 +1,18 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	{% if page.noindex %}
-	<META NAME="ROBOTS" CONTENT="NOINDEX,FOLLOW"/>
-	{% endif %}
+	{% if page.noindex %}<META NAME="ROBOTS" CONTENT="NOINDEX,FOLLOW"/>	{% endif %}
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	{% if page.description %}<meta name="description" content="{{ page.description }}">{% else %}<meta name="description" content="{{ site.description }}">{% endif %}
 	{% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{% else %}<meta name="keywords" content="{{ site.keywords }}">{% endif %}
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-
     <!-- CSS -->
-	<link rel="stylesheet" href="{{ "/assets/css/normalize.css" | prepend: site.baseurl }}">
-	<link rel="stylesheet" href="{{ "/assets/css/goodreads.css" | prepend: site.baseurl }}">
-    <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
-	<link rel="stylesheet" href="{{ "/assets/css/jquery.fancybox-1.3.4.css" | prepend: site.baseurl }}">
-
-	<script src="{{ "/assets/js/vendor/modernizr-2.6.2.min.js" | prepend: site.baseurl }}"></script>
-	<!-- Google Fonts-->
+    <link rel="stylesheet" href="{{ "/assets/css/main.min.css" | prepend: site.baseurl }}">
+	<!--JS-->
+	<script async type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<!--	<script src="{{ "/assets/js/vendor/modernizr-2.6.2.min.js" | prepend: site.baseurl }}">-->
+	<!-- Google Fonts -->
 	<script type="text/javascript">
 	(function() {
 		var link_element = document.createElement("link"),
@@ -32,16 +27,13 @@
 	})();
 	</script>
 	<!--Fancybox script-->
-	<script type='text/javascript' src='{{ site.baseurl }}/assets/js/vendor/jquery.min.js'></script>
-	<script type='text/javascript' src='{{ site.baseurl }}/assets/js/vendor/jquery.fancybox-1.3.4.pack.js'></script>
-	<script type="text/javascript">
-		$(function() {
-			$("a.group").fancybox({
-				'nextEffect'	:	'fade',
-				'prevEffect'	:	'fade',
-				'overlayOpacity' :  0.8,
-				'overlayColor' : '#000000',
-				'arrows' : false
+	<link rel="stylesheet" href="{{ site.baseurl }}/assets/js/vendor/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+	<script async type="text/javascript" src="{{ site.baseurl }}/assets/js/vendor/jquery.fancybox.pack.js?v=2.1.5"></script>
+	<script type='text/javascript'>
+		$(document).ready(function() {
+			$(".group").fancybox({
+				prevEffect		: 'none',
+				nextEffect		: 'none',
 			});
 		});
 	</script>
