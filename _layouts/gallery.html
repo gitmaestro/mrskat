@@ -1,0 +1,14 @@
+---
+layout: page
+---
+{{content}}
+<ul class="gallery">
+    {% for gallery in site.data.galleries %}
+    {% if gallery.parent ==  page.galleryid %}
+    <li class="gallery"><a href="/gallery/{{gallery.parent}}/{{ gallery.id }}"><img height="250px" src="{{ gallery.imageFolder }}/{{ gallery.cover }}"></a></br><a href="/gallery/{{gallery.parent}}/{{ gallery.id }}">{{ gallery.title }}</a></li>
+    {% elsif gallery.id == page.galleryid %}
+    {% for image in gallery.images %}
+    <li class="gallery"><a class="group" rel="group1" href="{{ gallery.imageFolder }}/{{ image.name }}" title="{{ image.text }}"><img src="{{ gallery.imageFolder }}/thumb/{{ image.name }}" alt="Фото"></a></li>    {% endfor %}
+    {% endif %}
+    {% endfor %}
+</ul>

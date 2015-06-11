@@ -3,4 +3,9 @@ layout: page
 title: Галерея
 permalink: /gallery/
 ---
-<p>Здесь будет галерея наверное</p>
+<ul class="gallery">
+{% for gallery in site.data.galleries %}
+<li class="gallery">{% if gallery.parent == null %}<a href="/gallery/{{ gallery.id }}"><img height="250px" src="{{ gallery.imageFolder }}/{{ gallery.cover }}" alt="Альбом"></a></br>
+    <a href="/gallery/{{ gallery.id }}">{{ gallery.title }}{% endif %}</a>
+</li>
+{% endfor %}</ul>
