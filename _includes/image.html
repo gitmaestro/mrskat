@@ -1,0 +1,6 @@
+{% if include.caption %}
+<p><a class="group" rel="group1" title="{{ include.caption }}" href="/pictures/{{ page.imageFolder }}/{{ include.name }}"><img src="/pictures/{{ page.imageFolder }}/mini/{{ include.name }}" {% if include.alt %} alt="{{ include.alt }}" {% endif %}/></a></p>
+<p class="caption">{{ include.caption }}</p>
+{% else %}
+<p><a class="group" rel="group1" href="/pictures/{{ page.imageFolder }}/{{ include.name }}"><img src="/pictures/{{ page.imageFolder }}/mini/{{ include.name }}" {% if include.alt %} alt="{{ include.alt }}" {% endif %}/></a></p>
+{% endif %}
