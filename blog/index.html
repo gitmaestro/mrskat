@@ -1,0 +1,47 @@
+---
+layout: default
+---
+{% for post in paginator.posts %}
+<div class="post-content">
+    <header class="post-header">
+        <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+    </header>
+<span class="post-date">
+{% assign m = post.date | date: "%-m" %}
+{% case m %}
+{% when '1' %}Янв.
+{% when '2' %}Февр.
+{% when '3' %}Март
+{% when '4' %}Апр.
+{% when '5' %}Май
+{% when '6' %}Июнь
+{% when '7' %}Июль
+{% when '8' %}Авг.
+{% when '9' %}Сент.
+{% when '10' %}Окт.
+{% when '11' %}Нояб.
+{% when '12' %}Дек.
+{% endcase %}
+{{ post.date | date: " %-d, %Y" }}
+{% for category in post.categories %}
+<a href="{{ site.baseurl }}/category/{{ category | slugize }}/"> / {{ category | replace:'usa','США' | replace:'animals','Животный мир' | replace:'private','Личные заметки' | replace:'reptiles','Рептилии' | replace:'computers','Компьютерное'}}</a>
+{% endfor %}</span>
+    {{ post.excerpt }}
+    <a class="exerp" href="{{ post.url | prepend: site.baseurl }}">Читать дальше</a>
+</div>
+{% endfor %}
+<div class="pagination">
+    <!-- Pagination links -->
+        {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path | replace: 'index.html', '/' | prepend: site.baseurl | replace: '//', '/' }}" class="previous">Преыдущая</a>
+        {% else %}
+        <span class="previous"><a href="/">На главную</a></span>
+        {% endif %}
+        <span class="page_number ">Станица: {{ paginator.page }} из {{ paginator.total_pages }}</span>
+        {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path }}" class="next">Следующая</a>
+        {% else %}
+        <span class="next ">Next</span>
+        {% endif %}
+    </div>
+</div>
