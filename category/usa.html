@@ -1,0 +1,31 @@
+---
+layout: page
+title: Категория - США
+permalink: /category/usa/
+---
+<p>Записи, связанные с иммиграцией, жизнью в США.</p>
+<!--Название каждой категории и список ниже-->
+<p><a class="page-link" href="{{ site.baseurl }}/category">Все категории</a></p>
+
+<h2>США</h2>
+{% for post in site.categories.usa %}
+        <ul>
+            <li>{% assign m = post.date | date: "%-m" %}
+                {% case m %}
+                {% when '1' %}Янв.
+                {% when '2' %}Февр.
+                {% when '3' %}Март
+                {% when '4' %}Апр.
+                {% when '5' %}Май
+                {% when '6' %}Июнь
+                {% when '7' %}Июль
+                {% when '8' %}Авг.
+                {% when '9' %}Сент.
+                {% when '10' %}Окт.
+                {% when '11' %}Нояб.
+                {% when '12' %}Дек.
+                {% endcase %}
+                {{ post.date | date: "%-d, %Y" }} -- <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+            </li>
+        </ul>
+{% endfor %}
