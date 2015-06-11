@@ -2,7 +2,15 @@
 ---
 User-agent: *
 Disallow: /404.html
-Disallow: /category/*
-Disallow: /page/
+Disallow: /category*
+Disallow: /blog*
+Disallow: /gallery*
+Disallow: /news*
+Disallow: /*.jpg$
+Disallow: /*.JPG$
 Allow: /
 Sitemap: {{ site.url }}/sitemap.xml
+User-agent: Googlebot-Image
+Disallow: /
+User-agent: YandexImages
+Disallow: /
