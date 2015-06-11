@@ -8,34 +8,21 @@ permalink: /posts/
 {% for post in posts %}
     {% capture month %}
         {% assign m = post.date | date: "%-m" %}
-            {% case m %}
-                {% when '1' %}Январь
-                {% when '2' %}Февраль
-                {% when '3' %}Март
-                {% when '4' %}Апрель
-                {% when '5' %}Май
-                {% when '6' %}Июнь
-                {% when '7' %}Июль
-                {% when '8' %}Август
-                {% when '9' %}Сентябрь
-                {% when '10' %}Октябрь
-                {% when '11' %}Ноябрь
-                {% when '12' %}Декабрь
-            {% endcase %}
+           {% include date.html post="" %}
            {{ post.date | date: "%Y" }}
     {% endcapture %}
     {% if last_month != month %}
 		<h3 class="month">{{ month }}</h3>
         <div class="list"> <span class="c-date">{{ post.date | date: '%-d' }}</span>   <a href="{{ post.id }}/" title="{{ post.title }}">{{ post.title }} </a>
             {% for category in post.categories %}
-			// <a href="/category/{{ category | slugize }}/">{{ category | replace:'usa','США' | replace:'animals','Животный мир' | replace:'private','Личные заметки' | replace:'reptiles','Рептилии' | replace:'computers','Компьютерное' }}</a>
+			// <a href="/category/{{ category | slugize }}/">{% include categories.html %}</a>
             {% endfor %}
         </div>
         {% assign last_month = month %}
         {% else %}
         <div class="list"> <span class="c-date">{{ post.date | date: '%-d' }}</span>   <a href="{{ post.id }}/" title="{{ post.title }}">{{ post.title }}</a>
             {% for category in post.categories %}
-               // <a href="/category/{{ category | slugize }}/">{{ category | replace:'usa','США' | replace:'animals','Животный мир' | replace:'private','Личные заметки' | replace:'reptiles','Рептилии' | replace:'computers','Компьютерное'}}</a>
+               // <a href="/category/{{ category | slugize }}/">{% include categories.html %}</a>
             {% endfor %}</div>
     {% endif %}
 {% endfor %}

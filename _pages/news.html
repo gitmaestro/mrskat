@@ -5,21 +5,6 @@ permalink: /news/
 ---
 <div class="news-block">
     {% for post in site.news reversed  %}
-    <p><b>{% assign m = post.date | date: "%-m" %}
-        {% case m %}
-        {% when '1' %}Янв.
-        {% when '2' %}Февр.
-        {% when '3' %}Март
-        {% when '4' %}Апр.
-        {% when '5' %}Май
-        {% when '6' %}Июнь
-        {% when '7' %}Июль
-        {% when '8' %}Авг.
-        {% when '9' %}Сент.
-        {% when '10' %}Окт.
-        {% when '11' %}Нояб.
-        {% when '12' %}Дек.
-        {% endcase %}
-        {{ post.date | date: " %-d, %Y" }}</b> - {{post.content | remove: '<p>' | remove: '</p>'}}</p>
+    <p><b>{% include date.html post="" %}{{ post.date | date: "%-d, %Y" }}</b> - {{post.content | remove: '<p>' | remove: '</p>'}}</p>
     {% endfor %}
 </div>

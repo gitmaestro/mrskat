@@ -5,28 +5,12 @@ permalink: /category/
 ---
 <p>Посмотеть все посты в временном поряке можно <a href="/posts/">здесь</a>.</p>
 {% for category in site.categories %}
-<h3><a href="/category/{{ category | first | slugize }}/">{{ category | first | replace:'usa','США' | replace:'animals','Животный мир' | replace:'private','Личные заметки' | replace:'reptiles','Рептилии' | replace:'computers','Компьютерное' }}</a></h3>
+<h3><a href="/category/{{ category | first | slugize }}/">{% include categories.html first="" %}</a></h3>
     {% for posts in category %}
         {% for post in posts %}
             {% if post.url %}
                      <div class="list">
-                         {% assign m = post.date | date: "%-m" %}
-                         {% case m %}
-                         {% when '1' %}Янв.
-                         {% when '2' %}Февр.
-                         {% when '3' %}Март
-                         {% when '4' %}Апр.
-                         {% when '5' %}Май
-                         {% when '6' %}Июнь
-                         {% when '7' %}Июль
-                         {% when '8' %}Авг.
-                         {% when '9' %}Сент.
-                         {% when '10' %}Окт.
-                         {% when '11' %}Нояб.
-                         {% when '12' %}Дек.
-                         {% endcase %}
-                         {{ post.date | date: "%-d, %Y" }} --
-                     <a href="{{ post.url }}">{{ post.title }}</a>
+                         {% include date.html post="" %}{{ post.date | date: "%-d, %Y" }} -- <a href="{{ post.url }}">{{ post.title }}</a>
                     </div>
             {% endif %}
         {% endfor %}

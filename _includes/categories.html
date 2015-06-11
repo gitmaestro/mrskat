@@ -1,0 +1,3 @@
+{% if include.first %}{{ category | first | replace:'usa','США' | replace:'animals','Животный мир' | replace:'private','Личные заметки' | replace:'reptiles','Рептилии' | replace:'computers','Компьютерное' | replace:'reviews','Обзоры' }}
+{% else %}
+{{ category | replace:'usa','США' | replace:'animals','Животный мир' | replace:'private','Личные заметки' | replace:'reptiles','Рептилии' | replace:'computers','Компьютерное' | replace:'reviews','Обзоры' }}{% endif %}

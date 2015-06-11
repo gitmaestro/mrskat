@@ -8,7 +8,7 @@
 		<div class="sidebar catlist ">
 			<b>Категории:</b>
 			<ul>{% for category in site.categories %}
-			<li><a href="{{ site.baseurl }}/category/{{ category | first | slugize  }}">{{ category | first | replace:'usa','США' | replace:'animals','Животный мир' | replace:'private','Личные заметки' | replace:'reptiles','Рептилии' | replace:'computers','Компьютерное' }}</a>
+			<li><a href="{{ site.baseurl }}/category/{{ category | first | slugize  }}">{% include categories.html first="" %}</a>
             </li>
 			{% endfor %}
 			</ul>

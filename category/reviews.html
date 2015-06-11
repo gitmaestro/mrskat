@@ -1,0 +1,12 @@
+---
+layout: page
+title: Категория - Отзывы
+permalink: /category/reviews/
+---
+Мое мнение и обзоры на книги, фильмы и прочее.
+{% for post in site.categories.reviews %}
+        <ul>
+        <li>{% include date.html post="" %}{{ post.date | date: "%-d, %Y" }} -- <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+            </li>
+        </ul>
+{% endfor %}

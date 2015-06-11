@@ -5,22 +5,7 @@ layout: default
 <div class="post-content">
         <h1>Новости и Обновления </h1>
         {% for post in site.news reversed limit: 10  %}
-        <p><b>{% assign m = post.date | date: "%-m" %}
-        {% case m %}
-        {% when '1' %}Янв.
-        {% when '2' %}Февр.
-        {% when '3' %}Март
-        {% when '4' %}Апр.
-        {% when '5' %}Май
-        {% when '6' %}Июнь
-        {% when '7' %}Июль
-        {% when '8' %}Авг.
-        {% when '9' %}Сент.
-        {% when '10' %}Окт.
-        {% when '11' %}Нояб.
-        {% when '12' %}Дек.
-        {% endcase %}
-       {{ post.date | date: " %-d, %Y" }}</b> - {{post.content | remove: '<p>' | remove: '</p>'}}</p>
+        <p><b>{% include date.html post="" %}{{ post.date | date: "%-d, %Y" }}</b> - {{post.content | remove: '<p>' | remove: '</p>'}}</p>
         {% endfor %}
         <p><sub><a href="/news/">Архив всех новостей</a></sub></p>
         <h3><a target="_blank" href="http://instagram.com/me0wth66">Последние фото с Instagram'a</a></h3>
@@ -42,24 +27,9 @@ layout: default
             <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
         </header>
          <span class="post-date">
-            {% assign m = post.date | date: "%-m" %}
-            {% case m %}
-            {% when '1' %}Янв.
-            {% when '2' %}Февр.
-            {% when '3' %}Март
-            {% when '4' %}Апр.
-            {% when '5' %}Май
-            {% when '6' %}Июнь
-            {% when '7' %}Июль
-            {% when '8' %}Авг.
-            {% when '9' %}Сент.
-            {% when '10' %}Окт.
-            {% when '11' %}Нояб.
-            {% when '12' %}Дек.
-            {% endcase %}
-            {{ post.date | date: " %-d, %Y" }}
+        {% include date.html post="" %}{{ post.date | date: "%-d, %Y" }}
         {% for category in post.categories %}
-        <a href="{{ site.baseurl }}/category/{{ category | slugize }}/"> / {{ category | replace:'usa','США' | replace:'animals','Животный мир' | replace:'private','Личные заметки' | replace:'reptiles','Рептилии' | replace:'computers','Компьютерное'}}</a>
+        <a href="{{ site.baseurl }}/category/{{ category | slugize }}/"> / {% include categories.html %}</a>
         {% endfor %}</span>
         {{ post.excerpt }}
         <a class="exerp" href="{{ post.url | prepend: site.baseurl }}">Читать дальше</a>
