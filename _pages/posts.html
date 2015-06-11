@@ -3,10 +3,9 @@ layout: page
 title: Архив
 permalink: /posts/
 ---
-
+<p>Все посты по категориям <a href="/category/">здесь</a>.</p>
 {% assign posts = site.posts %}
 {% for post in posts %}
-
     {% capture month %}
         {% assign m = post.date | date: "%-m" %}
             {% case m %}
@@ -25,24 +24,18 @@ permalink: /posts/
             {% endcase %}
            {{ post.date | date: "%Y" }}
     {% endcapture %}
-
     {% if last_month != month %}
-
 		<h3 class="month">{{ month }}</h3>
         <div class="list"> <span class="c-date">{{ post.date | date: '%-d' }}</span>   <a href="{{ post.id }}/" title="{{ post.title }}">{{ post.title }} </a>
             {% for category in post.categories %}
 			// <a href="/category/{{ category | slugize }}/">{{ category | replace:'usa','США' | replace:'animals','Животный мир' | replace:'private','Личные заметки' | replace:'reptiles','Рептилии' | replace:'computers','Компьютерное' }}</a>
             {% endfor %}
         </div>
-
         {% assign last_month = month %}
         {% else %}
-
         <div class="list"> <span class="c-date">{{ post.date | date: '%-d' }}</span>   <a href="{{ post.id }}/" title="{{ post.title }}">{{ post.title }}</a>
             {% for category in post.categories %}
                // <a href="/category/{{ category | slugize }}/">{{ category | replace:'usa','США' | replace:'animals','Животный мир' | replace:'private','Личные заметки' | replace:'reptiles','Рептилии' | replace:'computers','Компьютерное'}}</a>
             {% endfor %}</div>
     {% endif %}
 {% endfor %}
-
-

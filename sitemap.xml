@@ -19,7 +19,7 @@
     </url>
     {% endfor %}
 
-    <!-- Pages -->
+    <!-- Archive -->
     <url>
         <loc>{{ site.url }}/posts/</loc>
         <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
