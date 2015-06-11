@@ -1,11 +1,9 @@
 _site/
 _posts/
 _drafts/
-whoami.md
 desktop.ini
 .idea/
 images/
-gallery/
 pictures/
 video/
 *.log
