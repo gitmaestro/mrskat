@@ -13,22 +13,19 @@ baseurl: '' # does not include hostname
 markdown: kramdown
 permalink: '/posts/:title/'
 
-#related posts
-lsi:         false
-
 # Pagination
 paginate: 5
-paginate_path: "/page/:num"
+paginate_path: "/blog/:num"
 
-# Category lists pages
+# Files for news section
 collections:
-  category:
-    output: true
-    permalink: /category/:path/
+  news:
+    lebel: "Обновления"
+    type: "posts"
+
 
 # Static main pages
 include: ['_pages']
-relative_permalinks: false
 
 # Pages plagin
 #pages: ./_static_pages
@@ -36,6 +33,7 @@ relative_permalinks: false
 # Excerpt
 excerpt_separator: "<!-- cut -->"
 
-# Emoji
+# Emoji smile support
 gems:
-  - jemoji
+#  - jemoji
+  - jekyll-paginate
