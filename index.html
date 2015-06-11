@@ -1,62 +1,71 @@
 ---
 layout: default
 ---
-        <!--
 {% if page.url == "/index.html" %}
-    <div class="news-block">
-        <h1>Последние новости</h1>
-        {% for album in site.news limit: 5  %}
-         <b>{{album.date}}</b> - {{album.content}}
+<div class="post-content">
+        <h1>Новости и Обновления </h1>
+        {% for post in site.news reversed limit: 10  %}
+        <p><b>{% assign m = post.date | date: "%-m" %}
+        {% case m %}
+        {% when '1' %}Янв.
+        {% when '2' %}Февр.
+        {% when '3' %}Март
+        {% when '4' %}Апр.
+        {% when '5' %}Май
+        {% when '6' %}Июнь
+        {% when '7' %}Июль
+        {% when '8' %}Авг.
+        {% when '9' %}Сент.
+        {% when '10' %}Окт.
+        {% when '11' %}Нояб.
+        {% when '12' %}Дек.
+        {% endcase %}
+       {{ post.date | date: " %-d, %Y" }}</b> - {{post.content | remove: '<p>' | remove: '</p>'}}</p>
         {% endfor %}
+        <p><sub><a href="/news/">Архив всех новостей</a></sub></p>
+        <h3><a target="_blank" href="http://instagram.com/me0wth66">Последние фото с Instagram'a</a></h3>
+        <ul id="instagram"></ul>
+        <script type="text/javascript">
+            (function(a){a.fn.jqinstapics=function(b){var c={user_id:null,access_token:null,count:10};var d=a.extend(c,b);return this.each(function(){var b=a(this),c="https://api.instagram.com/v1/users/"+d.user_id+"/media/recent?access_token="+d.access_token+"&count="+d.count+"&callback=?";a.getJSON(c,function(c){a.each(c.data,function(c,d){var e=a("<li/>").appendTo(b),f=a("<a/>",{href:d.link,target:"_blank"}).appendTo(e),g=a("<img/>",{src:d.images.thumbnail.url}).appendTo(f);if(d.caption){f.attr("title",d.caption.text);}});});if(d.user_id==null||d.access_token==null){b.append("<li>Please specify a User ID and Access Token, as outlined in the docs.</li>");}});};})(jQuery);
+            $("#instagram").jqinstapics({
+                "user_id": "46681329",
+                "access_token": "46681329.ab103e5.cb3aa2d00d5e4ad5ae975701c71fbb5e",
+                "count": 5
+            });
+        </script>
     </div>
-{% endif %}-->
 <div class="posts">
-    {% for post in paginator.posts %}
-      <div class="post-content">
-		  <header class="post-header">
-			  <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
-		  </header>
-		  <span class="post-date">
+{% endif %}
+{% for post in site.posts | limit: 1 %}
+    <div class="post-content">
+        <header class="post-header">
+            <h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
+        </header>
+         <span class="post-date">
             {% assign m = post.date | date: "%-m" %}
             {% case m %}
-                {% when '1' %}Янв.
-                {% when '2' %}Февр.
-                {% when '3' %}Март
-                {% when '4' %}Апр.
-                {% when '5' %}Май
-                {% when '6' %}Июнь
-                {% when '7' %}Июль
-                {% when '8' %}Авг.
-                {% when '9' %}Сент.
-                {% when '10' %}Окт.
-                {% when '11' %}Нояб.
-                {% when '12' %}Дек.
+            {% when '1' %}Янв.
+            {% when '2' %}Февр.
+            {% when '3' %}Март
+            {% when '4' %}Апр.
+            {% when '5' %}Май
+            {% when '6' %}Июнь
+            {% when '7' %}Июль
+            {% when '8' %}Авг.
+            {% when '9' %}Сент.
+            {% when '10' %}Окт.
+            {% when '11' %}Нояб.
+            {% when '12' %}Дек.
             {% endcase %}
             {{ post.date | date: " %-d, %Y" }}
-          {% for category in post.categories %}
-          <a href="{{ site.baseurl }}/category/{{ category | slugize }}/"> / {{ category | replace:'usa','США' | replace:'animals','Животный мир' | replace:'private','Личные заметки' | replace:'reptiles','Рептилии' | replace:'computers','Компьютерное'}}</a>
-          {% endfor %}</span>
-		  {{ post.excerpt }}
-          <a class="exerp" href="{{ post.url | prepend: site.baseurl }}">Читать дальше</a>
-      </div>
+        {% for category in post.categories %}
+        <a href="{{ site.baseurl }}/category/{{ category | slugize }}/"> / {{ category | replace:'usa','США' | replace:'animals','Животный мир' | replace:'private','Личные заметки' | replace:'reptiles','Рептилии' | replace:'computers','Компьютерное'}}</a>
+        {% endfor %}</span>
+        {{ post.excerpt }}
+        <a class="exerp" href="{{ post.url | prepend: site.baseurl }}">Читать дальше</a>
+    </div>
     {% endfor %}
-</div>
-<div class="pagination">
-  {% if paginator.total_pages > 1 %}
-        {% if paginator.previous_page %}
-        <a href="{{ site.baseurl }}/{% if paginator.previous_page != 1 %}page/{{ paginator.previous_page }}{% endif %}">Раньше</a>
-        {% endif %}
-        {% for page in (1..paginator.total_pages) %}
-        {% if page == paginator.page %}
-        <em>{{ page }}</em>
-        {% elsif page == 1 %}
-        <a href="{{ '/' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
-        {% else %}
-        <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
-        {% endif %}
-        {% endfor %}
-        {% if paginator.next_page %}
-        <a href="{{ site.baseurl }}/page/{{ paginator.next_page }}">Позже</a>
-        {% endif %}
-  {% endif %}
-</div>
+    <div class="pagination">
+    <a href="/blog">Другие записи в блоге</a>
+    </div>
+    </div>
